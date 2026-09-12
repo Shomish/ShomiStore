@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- Catálogo completo de ShomiStore con búsqueda, filtros y ordenamiento local. -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo completo de productos disponibles en ShomiStore.">
+    <title>Catálogo | ShomiStore</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body class="catalog-page">
+    <header class="site-header">
+      <nav class="container d-flex align-items-center justify-content-between py-3" aria-label="Navegación del catálogo">
+        <a class="brand d-inline-flex align-items-center gap-2 text-decoration-none" href="index.html#inicio"><span class="brand-mark" aria-hidden="true"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=120&q=80" alt=""></span><span>ShomiStore</span></a>
+        <div class="catalog-nav"><a class="btn btn-soft" href="index.html">Volver al inicio</a><span class="catalog-cart">Carrito <strong id="contadorCatalogo">0</strong></span></div>
+        <button class="mobile-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">☰</button>
+        <div id="menuMovil" class="mobile-menu"><a href="index.html#seccionOfertas">Ofertas</a><a href="index.html#categoriasRapidas">Categorías</a><a href="socios.html">Platinum</a><a href="ayuda.html">Ayuda</a><a href="index.html">Inicio</a></div>
+      </nav>
+    </header>
+    <main class="container catalog-page-content py-5">
+      <section class="catalog-page-hero"><span class="eyebrow">Explora sin límites</span><h1>Todos los productos disponibles.</h1><p>Busca por nombre, filtra por categoría y encuentra justo lo que necesitas.</p></section>
+      <section class="catalog-toolbar" aria-label="Herramientas de catálogo"><label class="search-box"><span aria-hidden="true">⌕</span><input id="buscadorCatalogo" type="search" placeholder="Buscar productos..." aria-label="Buscar productos"></label><select id="filtroCatalogo" aria-label="Filtrar por categoría"><option value="">Todas las categorías</option></select><select id="ordenCatalogo" aria-label="Ordenar productos"><option value="featured">Destacados</option><option value="price-asc">Precio menor</option><option value="price-desc">Precio mayor</option><option value="name-asc">Nombre A-Z</option></select></section>
+      <div class="catalog-page-heading"><h2>Catálogo completo</h2><span id="contadorCatalogoProductos" class="product-count">Cargando...</span></div>
+      <div id="estadoCatalogo" class="loading-state" role="status"><div class="spinner-border" aria-hidden="true"></div><span>Cargando productos...</span></div>
+      <div id="listaCatalogo" class="row g-4"></div>
+    </main>
+    <script src="js/catalog.js"></script>
+    <script src="js/nav.js?v=2"></script>
+  </body>
+</html>

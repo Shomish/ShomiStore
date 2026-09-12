@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- Centro de ayuda independiente para resolver dudas frecuentes de ShomiStore. -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centro de ayuda de ShomiStore: pedidos, tallas, envíos y devoluciones.">
+    <title>Ayuda | ShomiStore</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body class="help-page">
+    <header class="site-header">
+      <nav class="container d-flex align-items-center justify-content-between py-3" aria-label="Navegación principal">
+        <a class="brand d-inline-flex align-items-center gap-2 text-decoration-none" href="index.html#inicio"><span class="brand-mark" aria-hidden="true">S</span><span>ShomiStore</span></a>
+        <a class="btn btn-soft" href="index.html">Volver a la tienda <span aria-hidden="true">↗</span></a>
+        <button class="mobile-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">☰</button>
+        <div id="menuMovil" class="mobile-menu"><a href="index.html#seccionOfertas">Ofertas</a><a href="catalogo.html">Catálogo</a><a href="socios.html">Platinum</a><a href="index.html">Inicio</a></div>
+      </nav>
+    </header>
+    <main class="container help-content py-5">
+      <!-- Encabezado de soporte con una entrada rápida a las preguntas. -->
+      <section class="help-hero">
+        <span class="eyebrow">Estamos para ayudarte</span>
+        <h1>Resuelve tus dudas. Sigue en movimiento.</h1>
+        <p>Encuentra respuestas sencillas sobre tallas, pedidos, envíos, cambios y el cuidado de tus prendas.</p>
+      </section>
+      <!-- Las preguntas usan details/summary para mantener un acordeón accesible y sin dependencias. -->
+      <section class="faq-list" aria-label="Preguntas frecuentes">
+        <details open><summary>¿Cómo puedo hacer un pedido?</summary><p>Explora el catálogo, abre el producto que te gusta, añádelo al carrito y completa tus datos de entrega. Recibirás la confirmación en tu correo.</p></details>
+        <details><summary>¿Cómo elijo mi talla?</summary><p>Revisa la descripción del producto y utiliza tu talla habitual. Para prendas deportivas, si prefieres un fit más suelto, elige una talla superior.</p></details>
+        <details><summary>¿Cuánto tarda el envío?</summary><p>Preparamos los pedidos en 24 horas. El tiempo de entrega depende de tu ubicación y se muestra en la confirmación del pedido.</p></details>
+        <details><summary>¿Puedo devolver o cambiar una prenda?</summary><p>Sí. Escríbenos dentro de los 30 días siguientes a la recepción. La prenda debe estar sin usar, con sus etiquetas y en su empaque original.</p></details>
+        <details><summary>¿Cómo cuido mi ropa deportiva?</summary><p>Lávala del revés con agua fría, evita la lejía y no la seques a temperaturas altas. Así conservarás mejor el color y la elasticidad.</p></details>
+        <details><summary>¿Qué es Shomi Platinum?</summary><p>Es nuestra membresía de beneficios: obtienes un 15% de descuento extra en tus pedidos y acceso anticipado a nuevas colecciones.</p></details>
+      </section>
+      <section class="help-cta"><span class="eyebrow">¿No encuentras lo que buscas?</span><h2>Hablemos de tu próxima compra.</h2><button id="btnContactoAyuda" class="btn btn-primary-custom" type="button">Contactar con ShomiStore</button></section>
+    </main>
+    <!-- Modal propio de la página de ayuda; esta página no carga el controlador del home. -->
+    <div id="modalContactoAyuda" class="modal-layer d-none" role="dialog" aria-modal="true" aria-labelledby="contactoAyudaTitulo"><div class="modal-panel form-panel contact-panel"><button id="cerrarContactoAyuda" class="close-button" type="button" aria-label="Cerrar">×</button><span class="eyebrow">Atención ShomiStore</span><h2 id="contactoAyudaTitulo">Hablemos de tu próxima compra.</h2><p class="muted-copy">Déjanos tus datos y te ayudaremos a encontrar lo que necesitas.</p><form id="formContactoAyuda"><label>Nombre<input name="name" required></label><label>Correo electrónico<input name="email" type="email" required></label><label>Mensaje<textarea name="message" required></textarea></label><button class="btn btn-primary-custom" type="submit">Enviar consulta</button></form><p id="respuestaContactoAyuda" class="contact-success d-none">Consulta preparada. Te responderemos muy pronto.</p></div></div>
+    <script src="js/help.js"></script>
+    <script src="js/nav.js?v=2"></script>
+  </body>
+</html>

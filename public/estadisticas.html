@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- Panel independiente de indicadores para evitar conflictos con el modal administrativo. -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estadísticas locales de ShomiStore.">
+    <title>Estadísticas | ShomiStore</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body class="statistics-page">
+    <header class="site-header">
+      <nav class="container d-flex align-items-center justify-content-between py-3" aria-label="Navegación de estadísticas">
+        <a class="brand d-inline-flex align-items-center gap-2 text-decoration-none" href="index.html#inicio"><span class="brand-mark" aria-hidden="true"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=120&q=80" alt=""></span><span>ShomiStore</span></a>
+        <div class="statistics-nav"><a class="btn btn-soft" href="index.html">Volver a la tienda</a><button id="btnSincronizarEstadisticas" class="btn btn-primary-custom" type="button">Sincronizar catálogo</button></div>
+        <button class="mobile-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">☰</button>
+        <div id="menuMovil" class="mobile-menu"><a href="index.html">Inicio</a><a href="catalogo.html">Catálogo</a><a href="socios.html">Platinum</a><a href="ayuda.html">Ayuda</a></div>
+      </nav>
+    </header>
+    <main class="container statistics-page-content py-5">
+      <section class="statistics-page-hero"><span class="eyebrow">Panel local</span><h1>Datos claros para decidir mejor.</h1><p>Estas métricas se calculan desde los productos y pedidos guardados en tu tienda local.</p><span id="estadoEstadisticas" class="sync-status">Comprobando sesión...</span></section>
+      <div id="loginEstadisticas" class="statistics-login d-none"><span class="eyebrow">Acceso administrativo</span><h2>Inicia sesión para ver tus datos</h2><form id="formLoginEstadisticas"><label>Correo<input name="email" type="email" value="admin@novastore.com" required></label><label>Contraseña<input name="password" type="password" value="admin123" required></label><button class="btn btn-primary-custom" type="submit">Entrar al panel</button></form></div>
+      <section id="contenidoEstadisticas" class="admin-statistics d-none" aria-live="polite"></section>
+    </main>
+    <script src="js/stats.js"></script>
+    <script src="js/nav.js?v=2"></script>
+  </body>
+</html>

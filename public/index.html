@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShomiStore, tu tienda online para descubrir productos para cada parte de tu vida.">
+    <title>ShomiStore | Todo lo que buscas, en un solo lugar</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111627'/%3E%3Cpath d='M18 44V20h7l14 15V20h7v24h-7L25 29v15z' fill='%23c7f464'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <!-- Cabecera: identidad, acceso administrativo, carrito y navegación principal. -->
+    <header class="site-header">
+      <nav class="container d-flex align-items-center justify-content-between py-3" aria-label="Navegación principal">
+        <a class="brand d-inline-flex align-items-center gap-2 text-decoration-none" href="#inicio">
+          <span class="brand-mark" aria-hidden="true"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=120&q=80" alt=""></span>
+          <span>ShomiStore</span>
+        </a>
+        <div class="header-actions">
+          <button id="btnAdmin" class="icon-button" type="button" title="Panel de administración">⚙ <span>Administrar</span></button>
+          <button id="btnCarrito" class="cart-button" type="button"><span aria-hidden="true">◌</span> Carrito <strong id="contadorCarrito">0</strong></button>
+        </div>
+        <button class="mobile-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">☰</button>
+        <div id="menuMovil" class="mobile-menu"><a href="#seccionOfertas">Ofertas</a><a href="#categoriasRapidas">Categorías</a><a href="#novedades">Novedades</a><a href="catalogo.html">Todos los productos</a><a href="ayuda.html">Ayuda</a><a href="socios.html">Platinum</a></div>
+      </nav>
+      <div class="market-nav">
+        <div class="container market-nav-inner">
+          <button id="btnUbicacion" class="market-location" type="button">⌖ <span id="ubicacionTexto">Ingresa tu ubicación</span></button>
+          <div class="market-links"><a class="link-ofertas" href="#seccionOfertas">Ofertas</a><a href="#categoriasRapidas">Categorías</a><a href="#novedades">Novedades</a><a href="ayuda.html">Ayuda</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio" class="container py-4">
+      <!-- Hero editorial que presenta la colección antes del catálogo. -->
+      <section class="intro-panel mb-4" aria-labelledby="titulo-principal">
+        <div class="row align-items-end g-4">
+          <div class="col-lg-7 hero-copy">
+            <span class="eyebrow">ShomiStore / selección para todos los días</span>
+            <h1 id="titulo-principal">Todo lo que buscas, en un solo lugar.</h1>
+            <p class="lead-copy mb-0">Moda, belleza, tecnología, hogar y mucho más. Descubre productos pensados para hacerte la vida más fácil.</p>
+            <div class="hero-pills" aria-label="Ventajas de ShomiStore"><span>Compra segura</span><span>Envío rápido</span><span>15% Platinum</span></div>
+          </div>
+          <div class="col-lg-5 hero-visual">
+            <div class="hero-orbit" aria-hidden="true"></div>
+            <img class="hero-player" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=85" alt="Interior de una tienda moderna">
+            <span class="hero-sticker">NEW<br><strong>26/27</strong></span>
+          </div>
+          <div class="col-12 d-flex justify-content-start">
+            <button id="btnCargar" class="btn btn-load" type="button">
+              <span class="button-label">Explorar todos los productos</span>
+              <span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <nav id="categoriasRapidas" class="quick-categories" aria-label="Categorías rápidas"></nav>
+
+      <!-- Mensajes editoriales que explican la propuesta de valor sin salir del home. -->
+      <section class="brand-strip" aria-label="Ventajas de ShomiStore">
+        <article><span class="strip-number">01</span><div><h2>Una tienda para tu mundo</h2><p>Moda, tecnología, hogar y esenciales reunidos en un solo lugar.</p></div></article>
+        <article><span class="strip-number">02</span><div><h2>Compra sin complicarte</h2><p>Catálogo claro, carrito rápido y soporte cuando lo necesites.</p></div></article>
+        <article><span class="strip-number">03</span><div><h2>Más ventajas para ti</h2><p>Únete a Platinum y disfruta un 15% de descuento extra.</p></div></article>
+      </section>
+
+      <!-- Ofertas separadas para que los descuentos tengan un recorrido propio. -->
+      <section id="seccionOfertas" class="offers-section d-none" aria-labelledby="tituloOfertas">
+        <div class="section-heading"><div><span class="eyebrow">Selección especial</span><h2 id="tituloOfertas">Ofertas para aprovechar hoy</h2></div><a href="catalogo.html">Ver catálogo completo <span aria-hidden="true">→</span></a></div>
+        <div id="listaOfertas" class="row g-4"></div>
+      </section>
+
+      <!-- Novedades y membresía quedan en el home para facilitar el descubrimiento. -->
+      <section id="novedades" class="discover-section" aria-labelledby="tituloNovedades">
+        <div class="section-heading"><div><span class="eyebrow">Recién llegados</span><h2 id="tituloNovedades">Novedades para descubrir</h2></div><a href="catalogo.html">Explorar todo <span aria-hidden="true">→</span></a></div>
+        <div id="listaNovedades" class="row g-4"></div>
+      </section>
+
+      <section id="socios" class="partners-section" aria-labelledby="tituloSocios">
+        <div><span class="eyebrow">Programa de socios</span><h2 id="tituloSocios">Platinum te da más por cada compra.</h2><p>Accede a ofertas automáticas, lanzamientos anticipados y un descuento especial en productos seleccionados.</p><a class="btn btn-primary-custom" href="socios.html">Descubrir beneficios Platinum</a></div>
+        <div class="partner-perks"><span>15% extra</span><span>Ofertas automáticas</span><span>Acceso anticipado</span></div>
+      </section>
+
+      <!-- Catálogo dinámico: estados de carga/error, filtros y tarjetas insertadas por app.js. -->
+      <section aria-live="polite" aria-busy="false" id="catalogo" class="home-catalog-hidden">
+        <div id="estadoInicial" class="empty-state text-center">
+          <div class="empty-icon" aria-hidden="true">✦</div>
+          <h2>Tu próxima elección está aquí</h2>
+          <p>Explora nuestro catálogo y encuentra tu próxima compra.</p>
+        </div>
+
+        <div id="estadoCarga" class="loading-state d-none" role="status">
+          <div class="spinner-border" aria-hidden="true"></div>
+          <span>Cargando productos...</span>
+        </div>
+
+        <div id="estadoError" class="alert custom-alert d-none" role="alert"></div>
+
+        <div id="controlesCatalogo" class="catalog-controls d-none">
+          <label class="search-box"><span aria-hidden="true">⌕</span><input id="buscador" type="search" placeholder="Buscar por nombre..." aria-label="Buscar productos"></label>
+          <select id="filtroCategoria" aria-label="Filtrar por categoría"><option value="">Todas las categorías</option></select>
+          <select id="ordenar" aria-label="Ordenar productos"><option value="featured">Destacados</option><option value="price-asc">Precio: menor a mayor</option><option value="price-desc">Precio: mayor a menor</option></select>
+          <span id="estadoSincronizacion" class="sync-status" role="status">Catálogo local listo</span>
+        </div>
+
+        <div id="resumen" class="catalog-heading d-none">
+          <div>
+            <span class="eyebrow">Catálogo</span>
+            <h2>Productos disponibles</h2>
+          </div>
+          <span id="contador" class="product-count"></span>
+        </div>
+
+        <div id="listaProductos" class="row g-4"></div>
+      </section>
+    </main>
+
+    <!-- Footer con acceso a soporte y promesa de marca. -->
+    <footer id="ayuda" class="site-footer container py-5">
+      <div class="footer-brand"><span class="eyebrow">ShomiStore</span><h2>Tu próxima compra empieza aquí.</h2><p>Productos para tu estilo, tu hogar, tu tecnología y tu día a día.</p></div>
+      <div class="footer-column"><strong>Compra</strong><a class="link-ofertas" href="#seccionOfertas">Ofertas</a><a href="#categoriasRapidas">Categorías</a><a href="#novedades">Novedades</a><a href="catalogo.html">Todos los productos</a></div>
+      <div class="footer-column"><strong>Ayuda</strong><a href="ayuda.html">Preguntas frecuentes</a><button id="btnContacto" class="footer-link" type="button">Contactarnos</button><a href="mailto:hola@shomistore.com">hola@shomistore.com</a></div>
+      <div class="footer-platinum"><strong>Shomi Platinum</strong><p>15% de descuento extra en tus pedidos.</p><a href="socios.html">Descubrir beneficios <span aria-hidden="true">↗</span></a></div>
+    </footer>
+
+    <!-- Capas interactivas: detalle, checkout, avisos, CRUD y confirmaciones. -->
+    <div id="modalProducto" class="modal-layer d-none" role="dialog" aria-modal="true" aria-labelledby="detalleNombre">
+      <div class="modal-panel product-detail"><button class="close-button" data-close="modalProducto" type="button" aria-label="Cerrar">×</button><div id="detalleContenido"></div></div>
+    </div>
+    <aside id="panelCarrito" class="side-panel" aria-label="Carrito de compra"><div class="side-panel-head"><div><span class="eyebrow">Tu selección</span><h2>Carrito</h2></div><button class="close-button" data-close="panelCarrito" type="button" aria-label="Cerrar">×</button></div><div id="itemsCarrito" class="cart-items"></div><div id="carritoVacio" class="cart-empty">Todavía no has agregado productos.</div><div class="cart-footer"><div><span>Total</span><strong id="totalCarrito">$0.00</strong></div><button id="btnCheckout" class="btn btn-primary-custom" type="button" disabled>Finalizar compra</button></div></aside>
+    <div id="modalCheckout" class="modal-layer d-none" role="dialog" aria-modal="true"><div class="modal-panel form-panel"><button class="close-button" data-close="modalCheckout" type="button" aria-label="Cerrar">×</button><span class="eyebrow">Último paso</span><h2>Completa tu pedido</h2><form id="formCheckout"><label>Nombre<input name="name" required></label><label>Correo electrónico<input name="email" type="email" required></label><label>Dirección de entrega<textarea name="address" required></textarea></label><button class="btn btn-primary-custom" type="submit">Confirmar pedido</button></form></div></div>
+    <div id="modalAviso" class="modal-layer d-none" role="dialog" aria-modal="true" aria-labelledby="avisoTitulo"><div class="modal-panel notice-panel"><button class="close-button" data-close="modalAviso" type="button" aria-label="Cerrar">×</button><div class="notice-icon" aria-hidden="true">✓</div><span class="eyebrow">ShomiStore</span><h2 id="avisoTitulo">Producto agregado</h2><p id="avisoTexto">Tu producto está en el carrito.</p><button class="btn btn-primary-custom" data-close="modalAviso" type="button">Continuar comprando</button></div></div>
+    <!-- Confirmación visual para acciones destructivas del CRUD. -->
+    <div id="modalConfirmacion" class="modal-layer d-none" role="dialog" aria-modal="true" aria-labelledby="confirmacionTitulo"><div class="modal-panel notice-panel confirm-panel"><button class="close-button" data-close="modalConfirmacion" type="button" aria-label="Cerrar">×</button><div class="notice-icon warning-icon" aria-hidden="true">!</div><span class="eyebrow">Acción irreversible</span><h2 id="confirmacionTitulo">¿Eliminar producto?</h2><p id="confirmacionTexto">Esta acción quitará el producto del catálogo.</p><div class="confirm-actions"><button id="btnCancelarConfirmacion" class="btn btn-soft" type="button">Cancelar</button><button id="btnAceptarConfirmacion" class="btn btn-danger-custom" type="button">Sí, eliminar</button></div></div></div>
+    <div id="modalContacto" class="modal-layer d-none" role="dialog" aria-modal="true" aria-labelledby="contactoTitulo"><div class="modal-panel form-panel contact-panel"><button class="close-button" data-close="modalContacto" type="button" aria-label="Cerrar">×</button><span class="eyebrow">Atención ShomiStore</span><h2 id="contactoTitulo">Hablemos de tu próxima compra.</h2><p class="muted-copy">Cuéntanos qué necesitas y nuestro equipo te responderá lo antes posible.</p><form id="formContacto"><label>Nombre<input name="name" required></label><label>Correo electrónico<input name="email" type="email" required></label><label>¿En qué podemos ayudarte?<textarea name="message" required></textarea></label><button class="btn btn-primary-custom" type="submit">Enviar consulta</button></form></div></div>
+    <div id="modalUbicacion" class="modal-layer d-none" role="dialog" aria-modal="true" aria-labelledby="ubicacionTitulo"><div class="modal-panel form-panel location-panel"><button class="close-button" data-close="modalUbicacion" type="button" aria-label="Cerrar">×</button><span class="eyebrow">Entrega local</span><h2 id="ubicacionTitulo">¿Dónde quieres recibir tu compra?</h2><p class="muted-copy">Guardaremos tu ubicación solo en este navegador para mostrarte una experiencia más cercana.</p><form id="formUbicacion"><label>Ciudad o zona<input id="campoUbicacion" name="location" placeholder="Ej. Lima, Miraflores" required></label><button class="btn btn-primary-custom" type="submit">Guardar ubicación</button></form></div></div>
+    <div id="modalAdmin" class="modal-layer d-none" role="dialog" aria-modal="true"><div class="modal-panel admin-panel"><button class="close-button" data-close="modalAdmin" type="button" aria-label="Cerrar">×</button><div id="adminContenido"><span class="eyebrow">Zona privada</span><h2>Panel de administración</h2><p class="muted-copy">Gestiona productos, stock y pedidos desde aquí.</p><form id="formLogin"><label>Correo<input name="email" type="email" value="admin@novastore.com" required></label><label>Contraseña<input name="password" type="password" value="admin123" required></label><button class="btn btn-primary-custom" type="submit">Iniciar sesión</button><small>Demo: admin@novastore.com / admin123</small></form></div></div></div>
+
+    <script src="js/axios.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/nav.js?v=2"></script>
+  </body>
+</html>
