@@ -1,4 +1,4 @@
-# NovaStore
+# ShomiStore
 
 Tienda web con catálogo persistente, carrito, pedidos, login de administrador y CRUD de productos.
 
